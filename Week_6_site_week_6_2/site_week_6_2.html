@@ -14,113 +14,178 @@
           "nav main main main main"
           "nav main main main main"
           "nav main main main main";
-        grid-template-rows: 0.5fr repeat(4 1fr);
-        grid-template-columns: repeat(5 1fr);
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
         height: 100vh;
         margin: 30px;
-        }
+      }
       header {
         grid-area: header;
         height: 10vh;
       }
-      .nav_header{
-
+      .header_in {
+        display: grid;
+        grid-template-rows: 0.5fr;
+        grid-template-columns: 4fr 4fr;
+      }
+      .nav_header {
+      }
+      .search {
+        padding: 5px 15px; /* Поля вокруг */
+        display: inline-block; /* Ширина соответствует содержимому */
+        border: 1px solid #ffffff; /* Параметры рамки */
+        border-radius: 20px; /* Скругляем рамку */
+      }
+      [type="search"] {
+        border: none;
+        outline: none; /* Убираем рамку */
+      }
+      .zoom {
+        border: none; /* Убираем рамку */
+        background: transparent; /* Убираем фон */
+        width: 20px;
+        height: 20px; /* Размеры картинки */
+        vertical-align: middle; /* Выравниваем по центру */
+        padding: 0; /* Убираем поля для IE */
+      }
+      .zoom::before {
+        content: url(assets_1/images/search.png); /* Выводим картинку */
+      }
+      .form {
+        grid-column: 1/2;
       }
       .nav_aside {
         grid-area: nav;
         width: 252px;
       }
+      .nav_1 {
+        display: block;
+        width: 24em;
+        padding: 10px;
+        margin: 10px;
+      }
+
       main {
         grid-area: main;
       }
       #inner-grid {
         display: grid;
-        grid-template-columns: repeat(4 1fr auto-fit, minmax(259px, 1fr));
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-gap: 5px;
       }
       #a1 {
         grid-column: 1/3;
         grid-row: 1/2;
-        width: 2fr;
-        height: 1fr;
       }
       #a2 {
         grid-column: 1/3;
         grid-row: 2/3;
-        width: 2fr;
-        height: 1fr;
       }
       #a3 {
         grid-column: 3/4;
         grid-row: 1/3;
-        width: 1fr;
-        height: 2fr;
       }
       #a4 {
         grid-column: 4/5;
         grid-row: 1/3;
-        width: 1fr;
-        height: 2fr;
       }
       #a5 {
         grid-column: 1/2;
         grid-row: 3/5;
-        width: 1fr;
-        height: 2fr;
       }
       #a6 {
         grid-column: 2/3;
         grid-row: 3/5;
-        width: 1fr;
-        height: 2fr;
       }
       #a7 {
         grid-column: 3/5;
         grid-row: 3/4;
-        width: 2fr;
-        height: 1fr;
       }
       #a8 {
         grid-column: 3/5;
         grid-row: 4/5;
-        width: 2fr;
-        height: 1fr;
       }
       .nav_1 {
         list-style-type: none;
       }
-      a { 
-    text-decoration: none;
-    }
-      
+      a {
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav class="nav_header">
-        <a href="#products"><span style="color: black">products</span></a> 
-        <a href="#story" ><span style="color: black">story</span></a> 
-        <a href="#manufacturing"><span style="color: black">manufacturing</span></a> 
-        <a href="#packaging"><span style="color: black">packaging</span></a>
-        <a href="basket.html"><img src="assets_1/images/basket.png" alt="1" /></a>
-        <a href="person.html"><img src="assets_1/images/person.png" alt="1" /></a>
-      </nav>
+      <div class="header_in">
+        <form class="form">
+          <div class="search">
+            <button class="zoom"></button>
+            <input type="search" name="s" placeholder="Search store" />
+          </div>
+        </form>
+        <nav class="nav_header">
+          <a href="#products"><span style="color: black">products</span></a>
+          <a href="#story"><span style="color: black">story</span></a>
+          <a href="#manufacturing"
+            ><span style="color: black">manufacturing</span></a
+          >
+          <a href="#packaging"><span style="color: black">packaging</span></a>
+          <a href="basket.html"
+            ><img src="assets_1/images/basket.png" alt="1"
+          /></a>
+          <a href="person.html"
+            ><img src="assets_1/images/person.png" alt="1"
+          /></a>
+        </nav>
+      </div>
     </header>
     <nav class="nav_aside">
-      <img src="assets_1/images/Logo.png" alt="logo">
+      <img src="assets_1/images/Logo.png" alt="logo" />
       <h2>Explore</h2>
       <ul class="nav_1">
         <li>
-          <img src="./assets_1/images/new.png" alt="new_in" /><a href="new_in.html"><span style="color: black">New In</span></a>
+          <img src="./assets_1/images/new.png" alt="new_in" /><a
+            href="new_in.html"
+            ><span style="color: black">New In</span></a
+          >
         </li>
-        <li><img class="nav_2" src="./assets_1/images/clothing.png" alt="clothing" /><a href="clothing.html"><span style="color: black">Clothing</span></li>
-        <li><img class="nav_2" src="./assets_1/images/shoes.png" alt="shoes" /><a href="shoes.html"><span style="color: black">Shoes</span></li>
-        <li><img class="nav_2" src="./assets_1/images/accessories.png" alt="accessories" /><a href="accessories.html"><span style="color: black">Accessories</span></li>
-        <li><img class="nav_2" src="./assets_1/images/activewear.png" alt="activewear" /><a href="activewear.html"><span style="color: black">Activewear</span></li>
-        <li><img class="nav_2" src="./assets_1/images/gifts.png" alt="gifts" /><a href="gifts.html"><span style="color: black">Gifts & Living</span></li>
-        <li><img class="nav_2" src="./assets_1/images/inspiration.png" alt="inspiration" /><a href="inspiration.html"><span style="color: black">Inspiration</span></li>
+        <li>
+          <img src="./assets_1/images/clothing.png" alt="clothing" /><a
+            href="clothing.html"
+            ><span style="color: black">Clothing</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/shoes.png" alt="shoes" /><a
+            href="shoes.html"
+            ><span style="color: black">Shoes</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/accessories.png" alt="accessories" /><a
+            href="accessories.html"
+            ><span style="color: black">Accessories</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/activewear.png" alt="activewear" /><a
+            href="activewear.html"
+            ><span style="color: black">Activewear</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/gifts.png" alt="gifts" /><a
+            href="gifts.html"
+            ><span style="color: black">Gifts & Living</span></a
+          >
+        </li>
+        <li>
+          <img src="./assets_1/images/inspiration.png" alt="inspiration" /><a
+            href="inspiration.html"
+            ><span style="color: black">Inspiration</span></a
+          >
+        </li>
       </ul>
     </nav>
     <main>
